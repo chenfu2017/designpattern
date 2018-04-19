@@ -6,11 +6,11 @@ public class Client {
 
     public static void main(String[] args) {
 
-        MyDirecyory root = new MyDirecyory("root");
-        MyDirecyory music = new MyDirecyory("music");
-        MyDirecyory kugou = new MyDirecyory("kugou");
-        MyDirecyory wycloud = new MyDirecyory("wycloud");
-        MyDirecyory video = new MyDirecyory("video");
+        MyDirectory root = new MyDirectory("root");
+        MyDirectory music = new MyDirectory("music");
+        MyDirectory kugou = new MyDirectory("kugou");
+        MyDirectory wycloud = new MyDirectory("wycloud");
+        MyDirectory video = new MyDirectory("video");
 
         MyFile file1 = new MyFile("1.mp3");
         MyFile file2 = new MyFile("2.mp3");

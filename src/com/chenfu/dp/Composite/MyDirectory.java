@@ -3,17 +3,17 @@ package com.chenfu.dp.Composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyDirecyory implements Ifile {
+public class MyDirectory implements Ifile {
 
     private List<Ifile> files = new ArrayList<Ifile>();
 
     private String name;
 
-    public MyDirecyory(String name) {
+    public MyDirectory(String name) {
         this.name = name;
     }
 
-    public MyDirecyory add(Ifile ifile) {
+    public MyDirectory add(Ifile ifile) {
         files.add(ifile);
         return this;
     }
