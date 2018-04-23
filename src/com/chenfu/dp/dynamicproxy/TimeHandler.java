@@ -1,10 +1,10 @@
-package com.chenfu.dp.Proxy;
+package com.chenfu.dp.dynamicproxy;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Date;
 
-public class TimeHandler implements InvocationHandler{
+public class TimeHandler implements InvocationHandler {
 	
 	private Object target;
 

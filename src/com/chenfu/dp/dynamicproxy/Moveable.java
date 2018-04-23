@@ -1,4 +1,4 @@
-package com.chenfu.dp.Proxy;
+package com.chenfu.dp.dynamicproxy;
 
 public interface Moveable {
 	public void move();

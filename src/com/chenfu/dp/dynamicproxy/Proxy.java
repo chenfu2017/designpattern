@@ -1,4 +1,4 @@
-package com.chenfu.dp.Proxy;
+package com.chenfu.dp.dynamicproxy;
 
 import javax.tools.JavaCompiler;
 import javax.tools.JavaCompiler.CompilationTask;
@@ -29,11 +29,11 @@ public class Proxy {
 		}
 		
 		String src = 
-			"package com.chenfu.dp.Proxy;" +  rt +
+			"package com.chenfu.dp.dynamicproxy;" +  rt +
 			"import java.lang.reflect.Method;" + rt +
 
 			"public class $Proxy1 implements " + infce.getName() + "{" + rt +
-		    "private com.chenfu.dp.Proxy.InvocationHandler h;" + rt +
+		    "private com.chenfu.dp.dynamicproxy.InvocationHandler h;" + rt +
 			"    public $Proxy1(InvocationHandler h) {" + rt +
 			"        this.h = h;" + rt +
 			"    }" + rt +
@@ -41,7 +41,7 @@ public class Proxy {
 			methodStr +
 			"}";
 		String fileName =
-				System.getProperty("user.dir")+"/src/com/chenfu/dp/Proxy/$Proxy1.java";
+				System.getProperty("user.dir")+"/src/com/chenfu/dp/dynamicproxy/$Proxy1.java";
 		File f = new File(fileName);
 		FileWriter fw = new FileWriter(f);
 		fw.write(src);
@@ -55,9 +55,9 @@ public class Proxy {
 		t.call();
 		fileMgr.close();
 
-		URL[] urls = new URL[] {new URL("file:/" +System.getProperty("user.dir")+"/src/com/chenfu/dp/Proxy/")};
+		URL[] urls = new URL[] {new URL("file:/" +System.getProperty("user.dir")+"/src/com/chenfu/dp/dynamicproxy/")};
 		URLClassLoader ul = new URLClassLoader(urls);
-		Class c = ul.loadClass("com.chenfu.dp.Proxy.$Proxy1");
+		Class c = ul.loadClass("com.chenfu.dp.dynamicproxy.$Proxy1");
 		Constructor ctr = c.getConstructor(InvocationHandler.class);
 		Object m = ctr.newInstance(h);
 		return m;

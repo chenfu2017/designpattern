@@ -1,4 +1,4 @@
-package com.chenfu.dp.Proxy;
+package com.chenfu.dp.dynamicproxy;
 
 import java.lang.reflect.Method;
 
