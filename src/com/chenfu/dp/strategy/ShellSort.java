@@ -1,18 +1,31 @@
 package com.chenfu.dp.strategy;
 
-public class ShellSort extends AbstractSort{
+public class ShellSort extends AbstractSort {
     @Override
     void sort(int[] arr) {
-        int N = arr.length;
+        if (arr == null || arr.length <= 1) {
+            return;
+        }
+        int len = arr.length;
         int h = 1;
-        while (h < N) h = h * 3 + 1;
-        while (h >= 1) {
-            for (int i = h; i < N; i++) {
-                for (int j = i; j >= h && arr[j] < arr[j - h]; j -= h ) {
-                    swap(arr, j, j - h);
+        while (h <= len / 3) {
+            h = h * 3 + 1;
+        }
+        while (h > 0) {
+            for (int k = 0; k < h; k++) {
+                for (int i = h + k; i < arr.length; i += h) {
+                    if (arr[i - h] > arr[i]) {
+                        int tmp = arr[i];
+                        int j = i - h;
+                        while (j >= 0 && arr[j] > tmp) {
+                            arr[j + h] = arr[j];
+                            j -= h;
+                        }
+                        arr[j + h] = tmp;
+                    }
                 }
             }
-            h = h / 3;
+            h = (h - 1) / 3;
         }
     }
 }
