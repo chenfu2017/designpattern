@@ -1,7 +1,6 @@
 package com.chenfu.dp.state;
 public class NormalState extends AccountState {
 
-
 	public NormalState(Account acc) {
 		this.acc=acc;
 	}
@@ -15,5 +14,4 @@ public class NormalState extends AccountState {
 			acc.setBalance(acc.getBalance() - amount);
 			checkState();
 	}
-
 }
