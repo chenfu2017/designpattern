@@ -6,14 +6,14 @@ public class MergeSort extends AbstractSort {
         Msort(arr,0,arr.length-1);
     }
 
-    private int[]  Msort(int[] arr,int low,int high) {
-        int mid = (low+high)/2;
-        if(low<high){
-            Msort(arr,low,mid);
-            Msort(arr,mid+1,high);
-            merge(arr,low,mid,high);
+    private void  Msort(int[] arr,int low,int high) {
+        if(low==high){
+            return;
         }
-        return arr;
+        int mid = (low+high)/2;
+        Msort(arr,low,mid);
+        Msort(arr,mid+1,high);
+        merge(arr,low,mid,high);
     }
 
     private void merge(int[] a, int low, int mid, int high) {
