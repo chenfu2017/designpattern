@@ -1,6 +1,7 @@
-package com.chenfu.dp.decorator;
+package com.chenfu.dp.decorator.translucent;
 
 public class Client {
+
     public static void main(String[] args) {
         Transformers car = new Car();
         Plane plane = new Plane(car);
@@ -9,6 +10,5 @@ public class Client {
         robot.move();
         plane.fly();
         plane.move();
-
     }
 }

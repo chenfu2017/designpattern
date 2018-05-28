@@ -1,4 +1,4 @@
-package com.chenfu.dp.decorator;
+package com.chenfu.dp.decorator.translucent;
 
 public abstract class Decorator implements Transformers{
 
