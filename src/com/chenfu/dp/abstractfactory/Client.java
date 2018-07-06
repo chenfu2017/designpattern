@@ -8,6 +8,5 @@ public class Client {
         skinFactory= new SpringSkinFactory();
         Textarea textarea = skinFactory.CreatTextarea();
         textarea.show();
-
     }
 }
