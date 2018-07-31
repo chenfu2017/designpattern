@@ -9,7 +9,7 @@ public class BinaryInsertSort extends AbstractSort {
                 int low = 0;
                 int high = i - 1;
                 while (low <= high) {
-                    int mid = (low + high) / 2;
+                    int mid = (low + high) >>> 1;
                     if (arr[mid] < tmp) {
                         low = mid + 1;
                     } else {
