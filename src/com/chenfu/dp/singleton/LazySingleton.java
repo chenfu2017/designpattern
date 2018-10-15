@@ -2,7 +2,7 @@ package com.chenfu.dp.singleton;
 
 public class LazySingleton {
 
-    private static LazySingleton lazySingleton = null;
+    private volatile static LazySingleton lazySingleton = null;
 
     private LazySingleton() {};
 
