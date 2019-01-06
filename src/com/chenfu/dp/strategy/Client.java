@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class Client {
     public static void main(String[] args) {
 
-        int[] arr = {49,38,65,97,76,13,27,49,55,4};
-        AbstractSort sort = new BinaryInsertSort();
+        int[] arr = {49,38,65,97,76,13,27,48,55,4};
+        AbstractSort sort = new QuickSort();
         Context context = new Context(sort);
 
         System.out.println("排列前:"+Arrays.toString(arr));
